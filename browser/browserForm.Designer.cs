@@ -1,4 +1,6 @@
-﻿namespace browser
+﻿using System.Windows.Forms;
+
+namespace browser
 {
     partial class BrowserForm
     {
@@ -20,15 +22,14 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BrowserForm));
             notifyIcon1 = new NotifyIcon(components);
-            panel1 = new Panel();
-            panel2 = new Panel();
+            tabControl = new TabControl();
+            panel = new Panel();
             RefreshButton = new Button();
             ForwardButton = new Button();
             BackButton = new Button();
             urlField = new TextBox();
-            WebBrowser = new Microsoft.Web.WebView2.WinForms.WebView2();
-            panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)WebBrowser).BeginInit();
+            newTabButton = new Button();
+            panel.SuspendLayout();
             SuspendLayout();
             // 
             // notifyIcon1
@@ -36,25 +37,27 @@
             notifyIcon1.Text = "notifyIcon1";
             notifyIcon1.Visible = true;
             // 
-            // panel1
+            // tabControl
             // 
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(800, 26);
-            panel1.TabIndex = 0;
+            tabControl.Dock = DockStyle.Fill;
+            tabControl.Location = new Point(0, 24);
+            tabControl.Name = "tabControl";
+            tabControl.SelectedIndex = 0;
+            tabControl.Size = new Size(804, 448);
+            tabControl.TabIndex = 0;
             // 
-            // panel2
+            // panel
             // 
-            panel2.Controls.Add(RefreshButton);
-            panel2.Controls.Add(ForwardButton);
-            panel2.Controls.Add(BackButton);
-            panel2.Controls.Add(urlField);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 26);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(800, 24);
-            panel2.TabIndex = 1;
+            panel.Controls.Add(RefreshButton);
+            panel.Controls.Add(ForwardButton);
+            panel.Controls.Add(BackButton);
+            panel.Controls.Add(urlField);
+            panel.Controls.Add(newTabButton);
+            panel.Dock = DockStyle.Top;
+            panel.Location = new Point(0, 0);
+            panel.Name = "panel";
+            panel.Size = new Size(804, 24);
+            panel.TabIndex = 1;
             // 
             // RefreshButton
             // 
@@ -90,19 +93,6 @@
             BackButton.UseVisualStyleBackColor = true;
             BackButton.Click += BackButton_Click;
             // 
-            // WebBrowser
-            // 
-            WebBrowser.AllowExternalDrop = true;
-            WebBrowser.CreationProperties = null;
-            WebBrowser.DefaultBackgroundColor = Color.White;
-            WebBrowser.Dock = DockStyle.Fill;
-            WebBrowser.Location = new Point(0, 50);
-            WebBrowser.Name = "WebBrowser";
-            WebBrowser.Size = new Size(800, 400);
-            WebBrowser.Source = new Uri("https://google.com", UriKind.Absolute);
-            WebBrowser.TabIndex = 2;
-            WebBrowser.ZoomFactor = 1D;
-            // 
             // urlField
             // 
             urlField.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -110,36 +100,42 @@
             urlField.BorderStyle = BorderStyle.FixedSingle;
             urlField.Location = new Point(90, 0);
             urlField.Name = "urlField";
-            urlField.Size = new Size(710, 23);
+            urlField.Size = new Size(678, 23);
             urlField.TabIndex = 0;
             urlField.KeyDown += UrlField_KeyDown;
-            urlField.Text = WebBrowser.Source.ToString();
-            urlField.Select(0, 0);
+            // 
+            // newTabButton
+            // 
+            newTabButton.Dock = DockStyle.Right;
+            newTabButton.Location = new Point(774, 0);
+            newTabButton.Name = "newTabButton";
+            newTabButton.Size = new Size(30, 24);
+            newTabButton.TabIndex = 1;
+            newTabButton.Text = "+";
+            newTabButton.Click += NewTabButton_Click;
             // 
             // BrowserForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(WebBrowser);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
+            ClientSize = new Size(804, 472);
+            Controls.Add(tabControl);
+            Controls.Add(panel);
             Name = "BrowserForm";
             Text = "Simple Browser";
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)WebBrowser).EndInit();
+            panel.ResumeLayout(false);
+            panel.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
         private NotifyIcon notifyIcon1;
-        private Panel panel1;
-        private Panel panel2;
-        private Microsoft.Web.WebView2.WinForms.WebView2 WebBrowser;
+        private Panel panel;
         private TextBox urlField;
         private Button RefreshButton;
         private Button ForwardButton;
         private Button BackButton;
+        private TabControl tabControl;
+        private Button newTabButton;
     }
 }

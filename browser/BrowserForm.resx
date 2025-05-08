@@ -123,27 +123,27 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="RefreshButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACjSURBVDhPxdGxCQJREIThPxEODOxALEAUEcTKDE/BAizB
-        EkTRyMDQ2A5swQqUhbewjC6ciNwHj3s3u0xwB3/SAfrAIJzG5sAV6OmgqbsGotJArTUIpsATmOkgWmlQ
-        jIBTKTgAE11wWUFdnlYQ399kBc4LUu0UdIFzuVvBGFjKjvtYYPwr74CjDoO0wNh/3msoHhp8YwgsNMxs
-        gEs4N2CrSz97ASw7G42s9X65AAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAKNJREFUOE/F0bEJAlEQhOE/EQ4M7EAsQBQRxMoMT8ECLMESRNHIwNDYDmzBCpSF
+        t7CMLpyI3AePeze7THAHf9IB+sAgnMbmwBXo6aCpuwai0kCtNQimwBOY6SBaaVCMgFMpOAATXXBZQV2e
+        VhDf32QFzgtS7RR0gXO5W8EYWMqO+1hg/CvvgKMOg7TA2H/eaygeGnxjCCw0zGyASzg3YKtLP3sBLDsb
+        jaz1frkAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="ForwardButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABhSURBVDhPzc47CoBADEXRq+AHRCvB/S/KxkoQRNDCJci0
-        r8pjGPCUNyQEChk0uFZg0ehKR2aNrg0YNboOYNLo2n9xpAUejVE9cGuManKWO+DVGJX1dlq+gEoHUSdQ
-        ayziAw7zDC3cEaoZAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAGFJREFUOE/NzjsKgEAMRdGr4AdEK8H9L8rGShBE0MIlyLSvymMY8JQ3JAQKGTS4
+        VmDR6EpHZo2uDRg1ug5g0ujaf3GkBR6NUT1wa4xqcpY74NUYlfV2Wr6ASgdRJ1BrLOIDDvMMLdwRqhkA
+        AAAASUVORK5CYII=
 </value>
   </data>
   <data name="BackButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABmSURBVDhPvc4rCoBQEEbh069JuMG1WcyKWGyCqzRYTIrr
-        kKl/mvGKXzwwD/hZoyFiACaNXmPJ8Az0Gr0WoNPotQKtRi+7/HrYXBqiEnBqjKq+WGKf3BqjbMmhMaoG
-        do1RGdg0FnsA36QLpU+2aNwAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAGZJREFUOE+9zisKgFAQRuHTr0m4wbVZzIpYbIKrNFhMiuuQqX+a8YpfPDAP+Fmj
+        IWIAJo1eY8nwDPQavRag0+i1Aq1GL7v8ethcGqIScGqMqr5YYp/cGqNsyaExqgZ2jVEZ2DQWewDfpAul
+        T7Zo3AAAAABJRU5ErkJggg==
 </value>
   </data>
 </root>
