@@ -5,6 +5,7 @@ namespace browser
     public partial class BrowserForm : Form
     {
         private readonly ILogger logger;
+        private readonly String LOG_FILE_PATH = "logs/log.txt";
 
         public BrowserForm()
         {
@@ -12,7 +13,7 @@ namespace browser
 
             ILoggerFactory factory = LoggerFactory.Create(builder =>
             {
-                builder.AddFile("logs/log.txt");
+                builder.AddFile(LOG_FILE_PATH);
                 builder.AddConsole();
             });
 
