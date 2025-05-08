@@ -18,6 +18,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BrowserForm));
             notifyIcon1 = new NotifyIcon(components);
             panel1 = new Panel();
             panel2 = new Panel();
@@ -58,44 +59,36 @@
             // RefreshButton
             // 
             RefreshButton.Dock = DockStyle.Left;
+            RefreshButton.Font = new Font("Segoe UI", 7F);
+            RefreshButton.Image = (Image)resources.GetObject("RefreshButton.Image");
             RefreshButton.Location = new Point(56, 0);
             RefreshButton.Name = "RefreshButton";
             RefreshButton.Size = new Size(28, 24);
             RefreshButton.TabIndex = 3;
-            RefreshButton.Text = "button3";
             RefreshButton.UseVisualStyleBackColor = true;
             RefreshButton.Click += RefreshButton_Click;
             // 
             // ForwardButton
             // 
             ForwardButton.Dock = DockStyle.Left;
+            ForwardButton.Image = (Image)resources.GetObject("ForwardButton.Image");
             ForwardButton.Location = new Point(28, 0);
             ForwardButton.Name = "ForwardButton";
             ForwardButton.Size = new Size(28, 24);
             ForwardButton.TabIndex = 2;
-            ForwardButton.Text = "button2";
             ForwardButton.UseVisualStyleBackColor = true;
             ForwardButton.Click += ForwardButton_Click;
             // 
             // BackButton
             // 
             BackButton.Dock = DockStyle.Left;
+            BackButton.Image = (Image)resources.GetObject("BackButton.Image");
             BackButton.Location = new Point(0, 0);
             BackButton.Name = "BackButton";
             BackButton.Size = new Size(28, 24);
             BackButton.TabIndex = 1;
-            BackButton.Text = "button1";
             BackButton.UseVisualStyleBackColor = true;
             BackButton.Click += BackButton_Click;
-            // 
-            // urlField
-            // 
-            urlField.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            urlField.Location = new Point(90, 0);
-            urlField.Name = "urlField";
-            urlField.Size = new Size(710, 23);
-            urlField.TabIndex = 0;
-            urlField.KeyDown += UrlField_KeyDown;
             // 
             // WebBrowser
             // 
@@ -109,6 +102,19 @@
             WebBrowser.Source = new Uri("https://google.com", UriKind.Absolute);
             WebBrowser.TabIndex = 2;
             WebBrowser.ZoomFactor = 1D;
+            // 
+            // urlField
+            // 
+            urlField.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            urlField.BackColor = SystemColors.Menu;
+            urlField.BorderStyle = BorderStyle.FixedSingle;
+            urlField.Location = new Point(90, 0);
+            urlField.Name = "urlField";
+            urlField.Size = new Size(710, 23);
+            urlField.TabIndex = 0;
+            urlField.KeyDown += UrlField_KeyDown;
+            urlField.Text = WebBrowser.Source.ToString();
+            urlField.Select(0, 0);
             // 
             // BrowserForm
             // 

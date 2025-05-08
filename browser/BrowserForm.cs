@@ -2,7 +2,7 @@ namespace browser
 {
     public partial class BrowserForm : Form
     {
-        
+
 
         public BrowserForm()
         {
@@ -28,10 +28,13 @@ namespace browser
         {
             if (e.KeyCode == Keys.Enter)
             {
-                try { 
+                try
+                {
                     WebBrowser.Source = new UriBuilder(urlField.Text).Uri;
                     WebBrowser.Focus();
-                } catch(UriFormatException ex) {
+                }
+                catch (UriFormatException ex)
+                {
                     Console.WriteLine("Malformed URL: " + ex);
                     return;
                 }
