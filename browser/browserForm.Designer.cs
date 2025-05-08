@@ -107,11 +107,11 @@ namespace browser
             // newTabButton
             // 
             newTabButton.Dock = DockStyle.Right;
+            newTabButton.Image = (Image)(new Bitmap(Properties.Resources.addTab, new Size(16, 16)));
             newTabButton.Location = new Point(774, 0);
             newTabButton.Name = "newTabButton";
             newTabButton.Size = new Size(30, 24);
             newTabButton.TabIndex = 1;
-            newTabButton.Text = "+";
             newTabButton.Click += NewTabButton_Click;
             // 
             // BrowserForm
