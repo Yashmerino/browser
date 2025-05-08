@@ -21,7 +21,6 @@ namespace browser
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BrowserForm));
-            notifyIcon1 = new NotifyIcon(components);
             tabControl = new TabControl();
             panel = new Panel();
             RefreshButton = new Button();
@@ -31,11 +30,6 @@ namespace browser
             newTabButton = new Button();
             panel.SuspendLayout();
             SuspendLayout();
-            // 
-            // notifyIcon1
-            // 
-            notifyIcon1.Text = "notifyIcon1";
-            notifyIcon1.Visible = true;
             // 
             // tabControl
             // 
@@ -129,7 +123,6 @@ namespace browser
         }
 
         #endregion
-        private NotifyIcon notifyIcon1;
         private Panel panel;
         private TextBox urlField;
         private Button RefreshButton;

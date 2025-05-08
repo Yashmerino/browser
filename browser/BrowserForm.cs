@@ -30,6 +30,25 @@ namespace browser
                     urlField.Text = browser.Source.ToString();
                 }
             };
+
+            tabControl.MouseUp += TabControl_MouseUp;
+        }
+
+        private void TabControl_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                for (int i = 0; i < tabControl.TabCount; i++)
+                {
+                    Rectangle r = tabControl.GetTabRect(i);
+                    if (r.Contains(e.Location))
+                    {
+                        logger.LogInformation("Closing tab at index {index}.", i);
+                        tabControl.TabPages.RemoveAt(i);
+                        break;
+                    }
+                }
+            }
         }
 
         private void BackButton_Click(object sender, EventArgs e)
