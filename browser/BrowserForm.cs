@@ -1,15 +1,28 @@
-using System.Windows.Forms;
+using Microsoft.Extensions.Logging;
 
 namespace browser
 {
     public partial class BrowserForm : Form
     {
+        private readonly ILogger logger;
+
         public BrowserForm()
         {
             InitializeComponent();
 
+            ILoggerFactory factory = LoggerFactory.Create(builder =>
+            {
+                builder.AddFile("logs/log.txt");
+                builder.AddConsole();
+            });
+
+            logger = factory.CreateLogger("Browser");
+
+            logger.LogInformation("BrowserForm initialized.");
+
             tabControl.SelectedIndexChanged += (s, e) =>
             {
+                logger.LogInformation("Tab with index {index} selected.", tabControl.SelectedIndex);
                 var browser = GetCurrentBrowser();
                 if (browser != null && browser.Source != null)
                 {
@@ -24,16 +37,19 @@ namespace browser
 
         private void BackButton_Click(object sender, EventArgs e)
         {
+            logger.LogInformation("Back button pressed.");
             GetCurrentBrowser()?.GoBack();
         }
 
         private void ForwardButton_Click(object sender, EventArgs e)
         {
+            logger.LogInformation("Forward button pressed.");
             GetCurrentBrowser()?.GoForward();
         }
 
         private void RefreshButton_Click(object sender, EventArgs e)
         {
+            logger.LogInformation("Refresh button pressed.");
             GetCurrentBrowser()?.Reload();
         }
 
@@ -42,6 +58,7 @@ namespace browser
         {
             if (e.KeyCode == Keys.Enter)
             {
+                logger.LogInformation("Search submitted and URL was changed to {url}.", urlField.Text);
                 var browser = GetCurrentBrowser();
                 if (browser != null)
                 {
@@ -52,7 +69,7 @@ namespace browser
                     }
                     catch (UriFormatException ex)
                     {
-                        Console.WriteLine("Malformed URL: " + ex);
+                        logger.LogError("Search submitted with Malformed URL. {e}", ex);
                     }
                 }
             }
@@ -60,7 +77,9 @@ namespace browser
 
         private void NewTabButton_Click(object sender, EventArgs e)
         {
+            logger.LogInformation("Creating new tab.");
             CreateNewTab("https://google.com");
+            logger.LogInformation("New tab created.");
         }
 
         private async void CreateNewTab(string url)
@@ -122,7 +141,9 @@ namespace browser
 
                 if (closeButton.Contains(e.Location))
                 {
+                    logger.LogInformation("Closing tab with index {index}.", i);
                     tabControl.TabPages.RemoveAt(i);
+                    logger.LogInformation("Tab with index {index} closed.", i);
                     break;
                 }
             }
