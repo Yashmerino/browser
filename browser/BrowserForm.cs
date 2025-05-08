@@ -16,6 +16,10 @@ namespace browser
                     urlField.Text = browser.Source.ToString();
                 }
             };
+
+            tabControl.DrawMode = TabDrawMode.OwnerDrawFixed;
+            tabControl.DrawItem += TabControl_DrawItem;
+            tabControl.MouseDown += TabControl_MouseDown;
         }
 
         private void BackButton_Click(object sender, EventArgs e)
@@ -98,5 +102,30 @@ namespace browser
             return null;
         }
 
+        private void TabControl_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            var tabPage = tabControl.TabPages[e.Index];
+            var tabRect = tabControl.GetTabRect(e.Index);
+
+            TextRenderer.DrawText(e.Graphics, tabPage.Text, tabControl.Font, tabRect, tabControl.ForeColor);
+
+            Rectangle closeButton = new Rectangle(tabRect.Right - 10, tabRect.Top - 5, 15, 15);
+            e.Graphics.DrawString("x", Font, Brushes.Black, closeButton.Location);
+        }
+
+        private void TabControl_MouseDown(object sender, MouseEventArgs e)
+        {
+            for (int i = 0; i < tabControl.TabPages.Count; i++)
+            {
+                Rectangle tabRect = tabControl.GetTabRect(i);
+                Rectangle closeButton = new Rectangle(tabRect.Right - 10, tabRect.Top - 5, 15, 15);
+
+                if (closeButton.Contains(e.Location))
+                {
+                    tabControl.TabPages.RemoveAt(i);
+                    break;
+                }
+            }
+        }
     }
 }
